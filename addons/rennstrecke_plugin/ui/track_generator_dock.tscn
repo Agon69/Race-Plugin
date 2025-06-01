@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cfhsc1rcrbmix"]
+[gd_scene load_steps=2 format=3 uid="uid://cfhsc1rcrbmix"]
+
+[ext_resource type="Script" path="res://addons/rennstrecke_plugin/ui/track_generator_dock.gd" id="1_k5jqd"]
 
 [node name="TrackGeneratorDock" type="VBoxContainer"]
+script = ExtResource("1_k5jqd")
 
 [node name="Rennstrecken Generator" type="Label" parent="."]
 layout_mode = 2
