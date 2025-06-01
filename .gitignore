@@ -1,0 +1,28 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot-spezifische Ordner und Dateien
+/.import/
+/.export/
+*.import
+
+# Mono (falls du C#-Skripte oder .csproj nutzt)
+/*.godot/
+/*.mono/
+/*.csproj
+/*.sln
+
+# Temporäre Dateien
+*.tmp
+*.log
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# IDE-Einstellungen (VSCode, Rider, etc.)
+.vscode/
+.idea/
+*.suo
+*.user

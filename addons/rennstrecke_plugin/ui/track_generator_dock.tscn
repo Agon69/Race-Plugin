@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cfhsc1rcrbmix"]
+
+[node name="TrackGeneratorDock" type="VBoxContainer"]
+
+[node name="Rennstrecken Generator" type="Label" parent="."]
+layout_mode = 2
+text = "Rennstrecken Generator"
+
+[node name="Streckenlaenge" type="SpinBox" parent="."]
+layout_mode = 2
+
+[node name="Kurvenanzahl" type="SpinBox" parent="."]
+layout_mode = 2
+
+[node name="Breite" type="SpinBox" parent="."]
+layout_mode = 2
+
+[node name="Banking" type="SpinBox" parent="."]
+layout_mode = 2
+
+[node name="Hoehenprofil" type="SpinBox" parent="."]
+layout_mode = 2
+
+[node name="Generieren" type="Button" parent="."]
+layout_mode = 2
+text = "Generieren"

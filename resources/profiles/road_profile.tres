@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProfileResource" load_steps=2 format=3 uid="uid://brfug02kid5yf"]
+
+[ext_resource type="Script" path="res://scripts/core/ProfileResource.gd" id="1_rdnla"]
+
+[resource]
+script = ExtResource("1_rdnla")
+width = 2.0
+height = 0.1
+banking = 0.0

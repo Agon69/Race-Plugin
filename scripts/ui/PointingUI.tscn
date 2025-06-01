@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cb6o6dimu8rfk"]
+
+[node name="PointingUi" type="Node2D"]
