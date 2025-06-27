@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProfileResource" load_steps=2 format=3 uid="uid://l6va2fnw6j0k"]
+
+[ext_resource type="Script" path="res://addons/rennstrecke_plugin/resources/ProfileResource.gd" id="1_vfe3m"]
+
+[resource]
+script = ExtResource("1_vfe3m")
+width = 4.0
+height = 0.0
+banking = 0.0

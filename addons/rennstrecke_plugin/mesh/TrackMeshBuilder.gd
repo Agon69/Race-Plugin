@@ -37,8 +37,8 @@ static func build_mesh(pts: PackedVector3Array, prof: ProfileResource) -> MeshIn
 
 		# Zwei Dreiecke pro Segment
 		var base: int = i * 4
-		st.add_index(base + 0); st.add_index(base + 1); st.add_index(base + 2)
-		st.add_index(base + 1); st.add_index(base + 3); st.add_index(base + 2)
+		st.add_index(base + 0); st.add_index(base + 2); st.add_index(base + 1)
+		st.add_index(base + 1); st.add_index(base + 2); st.add_index(base + 3)
 
 		acc_len += seg_len
 

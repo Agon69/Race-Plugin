@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProfileResource" load_steps=2 format=3 uid="uid://yar751x3wx1n"]
+
+[ext_resource type="Script" path="res://addons/rennstrecke_plugin/resources/ProfileResource.gd" id="1_2bges"]
+
+[resource]
+script = ExtResource("1_2bges")
+width = 12.0
+height = 0.0
+banking = 2.0
