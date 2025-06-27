@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RacePlugin"
-run/main_scene="res://scenes/node_3d.tscn"
+run/main_scene="res://scenes/test_track.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [dotnet]
