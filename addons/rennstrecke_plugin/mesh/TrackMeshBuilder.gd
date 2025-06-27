@@ -52,6 +52,7 @@ static func build_mesh(pts: PackedVector3Array, prof: ProfileResource) -> MeshIn
 	mi.mesh = mesh
 	var mat_path := "res://addons/rennstrecke_plugin/resources/debug_material.tres"
 	if ResourceLoader.exists(mat_path):
-		mi.set_surface_override_material(0, load(mat_path))
-
+			mi.set_surface_override_material(0, load(mat_path))
 	return mi
+	
+	

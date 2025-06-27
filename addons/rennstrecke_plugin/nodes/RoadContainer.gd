@@ -89,6 +89,7 @@ func build_mesh(step: float = bake_step) -> void:
 
 	# 5) Neues Mesh erzeugen
 	var mi := TrackMeshBuilder.build_mesh(pts, profile)
+	
 	add_child(mi)
 	mi.owner = get_owner()
 
@@ -106,7 +107,20 @@ func build_mesh(step: float = bake_step) -> void:
 	sb.add_child(cs)
 	cs.owner = get_owner()
 	cs.shape = mi.mesh.create_trimesh_shape() # Godot-Helper
+	
+	var tex_path := "res://addons/rennstrecke_plugin/resources/textures/%s.jpg" % preset_name
+	if ResourceLoader.exists(tex_path):
+		if mi.mesh and mi.mesh.get_surface_count() > 0:
+			mi.mesh.surface_set_material(0, null)
 
+		var mat := StandardMaterial3D.new()
+		mat.albedo_color = Color(1, 1, 1, 1)
+		mat.albedo_texture = load(tex_path)
+		mat.uv1_scale = Vector3(1, 1, 1)
+		mat.metallic = 0.0
+		mat.roughness = 1.0
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_DISABLED
+		mi.material_override = mat
 # --------------------------------------------------------------------
 #   Inhalt (RoadPoints, Mesh, Collision) komplett löschen
 # --------------------------------------------------------------------
