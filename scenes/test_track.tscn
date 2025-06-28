@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadManager.gd" id="1_iptyu"]
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadContainer.gd" id="2_lojfr"]
-[ext_resource type="Resource" uid="uid://cc0gfnxy2jq0u" path="res://addons/rennstrecke_plugin/resources/presets/race.tres" id="3_j0ld8"]
-[ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadPoint.gd" id="4_d2otw"]
+[ext_resource type="Resource" uid="uid://l6va2fnw6j0k" path="res://addons/rennstrecke_plugin/resources/presets/street.tres" id="3_7hf7j"]
+[ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadPoint.gd" id="4_ayq18"]
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadPlacer.gd" id="5_n58uj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dpddf"]
@@ -24,7 +24,7 @@ shape = SubResource("BoxShape3D_dpddf")
 mesh = SubResource("SphereMesh_v1s5y")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999999, -0.000909603, -0.000834525, 0.00120492, 0.866183, 0.499727, 0.000268309, -0.499727, 0.866183, 0, 10, 10)
+transform = Transform3D(0.999999, -0.0009096, -0.000834535, 0.00101506, 0.221192, 0.97523, -0.000702477, -0.97523, 0.221193, -55.3397, 12.8593, 255.399)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -33,38 +33,20 @@ transform = Transform3D(0.999848, 0.01043, -0.0139929, 0, 0.801776, 0.597625, 0.
 [node name="RoadManager" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0638256, -0.236429, 0.135764)
 script = ExtResource("1_iptyu")
-track_is_closed = false
 
 [node name="RoadContainer" type="Node3D" parent="RoadManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341504, 0.153022, 0.0872273)
 script = ExtResource("2_lojfr")
 track_id = 1
-profile = ExtResource("3_j0ld8")
-bake_step = 1.0
+profile = ExtResource("3_7hf7j")
+preset_name = "street"
 
 [node name="RoadPoint" type="Node3D" parent="RoadManager/RoadContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237.48, 0.439509, 15.4689)
-script = ExtResource("4_d2otw")
-
-[node name="RoadPoint1" type="Node3D" parent="RoadManager/RoadContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.219, 10.8848, 187.784)
-script = ExtResource("4_d2otw")
+script = ExtResource("4_ayq18")
 
 [node name="RoadPoint2" type="Node3D" parent="RoadManager/RoadContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.309, 20.6566, 244.059)
-script = ExtResource("4_d2otw")
-
-[node name="RoadPoint3" type="Node3D" parent="RoadManager/RoadContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172.975, 81.8371, 55.0391)
-script = ExtResource("4_d2otw")
-
-[node name="RoadPoint4" type="Node3D" parent="RoadManager/RoadContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.875, 13.1856, -239.725)
-script = ExtResource("4_d2otw")
-
-[node name="RoadPoint5" type="Node3D" parent="RoadManager/RoadContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.398, 0.439509, -161.992)
-script = ExtResource("4_d2otw")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 221.206)
+script = ExtResource("4_ayq18")
 
 [node name="RoadPlacer" type="Node3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.19203, 0.767557, 8.34232)
@@ -74,5 +56,5 @@ script = ExtResource("5_n58uj")
 transform = Transform3D(44.629, 0, 0, 0, 1, 0, 0, 0, 40.323, 0, -0.0604908, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(10.6483, 0, 0, 0, 1, 0, 0, 0, 13.7062, 0, 0, 0)
+transform = Transform3D(20.2008, 0, 0, 0, 9.06329, 0, 0, 0, 22.1457, 0, 0, 0)
 shape = SubResource("BoxShape3D_qaqbt")
