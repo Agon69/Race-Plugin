@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://u0bqitk6iyol"]
+[gd_scene load_steps=8 format=3 uid="uid://u0bqitk6iyol"]
 
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadManager.gd" id="1_iptyu"]
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadContainer.gd" id="2_lojfr"]
 [ext_resource type="Resource" uid="uid://l6va2fnw6j0k" path="res://addons/rennstrecke_plugin/resources/presets/street.tres" id="3_7hf7j"]
-[ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadPoint.gd" id="4_ayq18"]
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadPlacer.gd" id="5_n58uj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dpddf"]
@@ -11,6 +10,7 @@
 [sub_resource type="SphereMesh" id="SphereMesh_v1s5y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qaqbt"]
+size = Vector3(100, 1, 100)
 
 [node name="TestTrack_tscn" type="Node3D"]
 
@@ -41,13 +41,6 @@ track_id = 1
 profile = ExtResource("3_7hf7j")
 preset_name = "street"
 
-[node name="RoadPoint" type="Node3D" parent="RoadManager/RoadContainer"]
-script = ExtResource("4_ayq18")
-
-[node name="RoadPoint2" type="Node3D" parent="RoadManager/RoadContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 221.206)
-script = ExtResource("4_ayq18")
-
 [node name="RoadPlacer" type="Node3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.19203, 0.767557, 8.34232)
 script = ExtResource("5_n58uj")
@@ -56,5 +49,4 @@ script = ExtResource("5_n58uj")
 transform = Transform3D(44.629, 0, 0, 0, 1, 0, 0, 0, 40.323, 0, -0.0604908, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(20.2008, 0, 0, 0, 9.06329, 0, 0, 0, 22.1457, 0, 0, 0)
 shape = SubResource("BoxShape3D_qaqbt")
