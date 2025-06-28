@@ -12,6 +12,9 @@ var _next_track_id: int = 1    # fortlaufender Zähler
 		if value:
 			_rebuild_all()
 			generate_track = false          # Checkbox zurücksetzen
+			
+@export var track_is_closed: bool = true  # ⬅️ Standard: geschlossen
+
 
 @export var delete_track_id: int = 0        # ID eintragen
 
@@ -31,7 +34,8 @@ func _rebuild_all() -> void:
 			if child.track_id == 0:               # neue ID
 				child.track_id = _next_track_id
 				_next_track_id += 1
-			child.build_mesh()
+			child.build_mesh(child.bake_step, track_is_closed)
+
 
 # ------------------------------------------------------------
 #   Inhalte per ID löschen
