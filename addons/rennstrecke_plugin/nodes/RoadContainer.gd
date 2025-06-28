@@ -60,15 +60,20 @@ func build_mesh(step: float = bake_step) -> void:
 	for n in get_children():
 		if n is RoadPoint:
 			ctrl.append(n.transform.origin)
+
 	if ctrl.size() < 2:
 		push_warning("⚠️ Zu wenig Punkte!")
 		return
 
-	# 2) Curve neu aufbauen + Tangenten
+	# 2) Startpunkt als letztes Element wiederholen
+	ctrl.append(ctrl[0])
+
+	# 3) Curve neu aufbauen + zyklische Tangenten
 	var curve := path.curve
 	curve.clear_points()
 	for p in ctrl:
 		curve.add_point(p)
+
 	for i in range(ctrl.size()):
 		var in_t  := Vector3.ZERO
 		var out_t := Vector3.ZERO
@@ -79,35 +84,35 @@ func build_mesh(step: float = bake_step) -> void:
 		curve.set_point_in(i,  in_t)
 		curve.set_point_out(i, out_t)
 
-	# 3) Punkte backen
-	curve.bake_interval = step
+	# 4) Punkte backen
+	curve.bake_interval = step  # z. B. 0.01 für mehr Genauigkeit
 	var pts: PackedVector3Array = curve.get_baked_points()
 
-	# 4) Vorheriges Mesh entfernen
+	# 5) Vorheriges Mesh entfernen
 	if has_node("TrackMesh"):
 		get_node("TrackMesh").queue_free()
 
-	# 5) Neues Mesh erzeugen
+	# 6) Neues Mesh erzeugen
 	var mi := TrackMeshBuilder.build_mesh(pts, profile)
-	
 	add_child(mi)
 	mi.owner = get_owner()
 
-	# 6) Collision neu anlegen
+	# 7) Collision neu anlegen
 	if has_node("TrackCollision"):
 		get_node("TrackCollision").queue_free()
 
 	var sb := StaticBody3D.new()
-	sb.name      = "TrackCollision"
-	sb.transform = mi.transform               # exakt gleiche Pose
+	sb.name = "TrackCollision"
+	sb.transform = mi.transform
 	add_child(sb)
 	sb.owner = get_owner()
 
 	var cs := CollisionShape3D.new()
 	sb.add_child(cs)
 	cs.owner = get_owner()
-	cs.shape = mi.mesh.create_trimesh_shape() # Godot-Helper
-	
+	cs.shape = mi.mesh.create_trimesh_shape()
+
+	# 8) Material setzen (optional)
 	var tex_path := "res://addons/rennstrecke_plugin/resources/textures/%s.jpg" % preset_name
 	if ResourceLoader.exists(tex_path):
 		if mi.mesh and mi.mesh.get_surface_count() > 0:
@@ -121,6 +126,8 @@ func build_mesh(step: float = bake_step) -> void:
 		mat.roughness = 1.0
 		mat.transparency = BaseMaterial3D.TRANSPARENCY_DISABLED
 		mi.material_override = mat
+
+
 # --------------------------------------------------------------------
 #   Inhalt (RoadPoints, Mesh, Collision) komplett löschen
 # --------------------------------------------------------------------
