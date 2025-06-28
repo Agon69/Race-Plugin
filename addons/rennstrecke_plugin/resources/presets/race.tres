@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_wk6w8")
-width = 8.0
+width = 4.0
 height = 0.0
 banking = 5.0

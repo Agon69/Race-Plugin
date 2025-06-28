@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadManager.gd" id="1_iptyu"]
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadContainer.gd" id="2_lojfr"]
-[ext_resource type="Resource" uid="uid://l6va2fnw6j0k" path="res://addons/rennstrecke_plugin/resources/presets/street.tres" id="3_7hf7j"]
+[ext_resource type="Resource" uid="uid://cc0gfnxy2jq0u" path="res://addons/rennstrecke_plugin/resources/presets/race.tres" id="3_yk0b2"]
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadPlacer.gd" id="5_n58uj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dpddf"]
@@ -24,7 +24,7 @@ shape = SubResource("BoxShape3D_dpddf")
 mesh = SubResource("SphereMesh_v1s5y")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999999, -0.0009096, -0.000834535, 0.00101506, 0.221192, 0.97523, -0.000702477, -0.97523, 0.221193, -55.3397, 12.8593, 255.399)
+transform = Transform3D(0.999999, -0.000909601, -0.000834535, 0.00101506, 0.221192, 0.97523, -0.000702477, -0.97523, 0.221193, 204.527, -0.319289, -13.9341)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -38,8 +38,7 @@ script = ExtResource("1_iptyu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341504, 0.153022, 0.0872273)
 script = ExtResource("2_lojfr")
 track_id = 1
-profile = ExtResource("3_7hf7j")
-preset_name = "street"
+profile = ExtResource("3_yk0b2")
 
 [node name="RoadPlacer" type="Node3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.19203, 0.767557, 8.34232)
