@@ -15,7 +15,7 @@ func _add_preview_sphere() -> void:
 	var mesh: MeshInstance3D = MeshInstance3D.new()
 	mesh.name = "PreviewMesh"
 	mesh.mesh = SphereMesh.new()
-	mesh.scale = Vector3.ONE * 4            # Adjust sphere size
+	mesh.scale = Vector3.ONE * 5            # Adjust sphere size
 	mesh.material_override = _make_preview_material()
 	add_child(mesh)
 	mesh.owner = null                       # Do not save this node in the scene file
