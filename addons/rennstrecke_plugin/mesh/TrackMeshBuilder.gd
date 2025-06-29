@@ -2,10 +2,6 @@
 extends Object
 class_name TrackMeshBuilder
 
-# --------------------------------------------------------------------
-#   Static method to build a track mesh based on baked path points
-#   and a given profile (width, banking, etc.)
-# --------------------------------------------------------------------
 static func build_mesh(pts: PackedVector3Array, prof: ProfileResource) -> MeshInstance3D:
 	print("BUILDER → build_mesh(pts =", pts.size(), ")")
 

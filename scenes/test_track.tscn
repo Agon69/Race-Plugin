@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadContainer.gd" id="2_lojfr"]
 [ext_resource type="Resource" uid="uid://cc0gfnxy2jq0u" path="res://addons/rennstrecke_plugin/resources/presets/race.tres" id="3_yk0b2"]
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadPoint.gd" id="4_l1145"]
-[ext_resource type="Texture2D" uid="uid://blox8leqiu5bk" path="res://addons/rennstrecke_plugin/resources/textures/race.jpg" id="5_c845y"]
+[ext_resource type="Texture2D" uid="uid://br86ri4fobkki" path="res://addons/rennstrecke_plugin/resources/textures/race.jpg" id="5_c845y"]
 [ext_resource type="Script" path="res://addons/rennstrecke_plugin/nodes/RoadPlacer.gd" id="5_n58uj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dpddf"]
@@ -62,6 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341504, 0.153022, 0.0872273
 script = ExtResource("2_lojfr")
 track_id = 1
 profile = ExtResource("3_yk0b2")
+close_track = null
 
 [node name="RoadPoint" type="Node3D" parent="RoadManager/RoadContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.1075)
