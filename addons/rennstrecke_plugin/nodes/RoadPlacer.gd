@@ -17,11 +17,11 @@ func _process(_delta: float) -> void:
 		was_pressed_last_frame = false
 
 func _place_point_at_mouse() -> void:
-	print("📦 Platzierung ausgelöst durch Taste P")  # Debug
+	print("Platzierung ausgelöst durch Taste P")  # Debug
 
 	var camera: Camera3D = get_viewport().get_camera_3d()
 	if camera == null:
-		push_error("❌ Keine Kamera gefunden")
+		push_error("Keine Kamera gefunden")
 		return
 
 	var mouse_pos: Vector2 = get_viewport().get_mouse_position()
@@ -38,19 +38,19 @@ func _place_point_at_mouse() -> void:
 	var result: Dictionary = space_state.intersect_ray(query)
 
 	if result.is_empty():
-		print("⚠️ Kein Treffer im Raum")
+		print("Kein Treffer im Raum")
 		return
 
 	var pos: Vector3 = result.position
 
 	var scene_root: Node = get_tree().edited_scene_root
 	if scene_root == null:
-		push_error("❌ Keine Szene geöffnet!")
+		push_error("Keine Szene geöffnet!")
 		return
 
 	var road_container: Node3D = scene_root.find_child("RoadContainer", true, false)
 	if road_container == null:
-		push_error("❌ RoadContainer nicht gefunden!")
+		push_error("RoadContainer nicht gefunden!")
 		return
 
 	var roadpoint: Node3D = preload("res://addons/rennstrecke_plugin/nodes/RoadPoint.gd").new()
@@ -67,4 +67,4 @@ func _place_point_at_mouse() -> void:
 	road_container.add_child(roadpoint)
 	roadpoint.owner = scene_root
 
-	print("✅", roadpoint.name, "platziert bei:", pos)
+	print(roadpoint.name, "platziert bei:", pos)
